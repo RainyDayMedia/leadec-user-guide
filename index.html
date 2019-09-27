@@ -1,0 +1,668 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Leadec-Locations_OperatorsGuide</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root {
+    --side-bar-bg-color: #fff;
+    --control-text-color: #777;
+}
+
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+/* cyrillic-ext */
+/* cyrillic */
+/* greek-ext */
+/* greek */
+/* vietnamese */
+/* latin-ext */
+/* latin */
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif !important;
+    color: #34495e;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6rem;
+    letter-spacing: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#write {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 100px;
+}
+
+#write p {
+    line-height: 1.6rem;
+    word-spacing: .05rem;
+}
+
+#write ol li {
+    text-indent: 0.5rem;
+}
+
+#write > ul:first-child,
+#write > ol:first-child {
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+a {
+    color: #42b983;
+    font-weight: 600;
+    padding: 0 2px;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit !important;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit !important;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit !important;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit !important;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit !important;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit !important;
+}
+
+h2 a,
+h3 a {
+    color: #34495e;
+}
+
+h1 {
+    padding-bottom: .4rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.75rem;
+    line-height: 1.225;
+    margin: 35px 0 15px;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.43;
+    margin: 20px 0 7px;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+    color: #777;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+    margin: 0.8em 0;
+}
+
+li > ol,
+li > ul {
+    margin: 0 0;
+}
+
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul,
+ol {
+    padding-left: 30px;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+blockquote {
+    border-left: 4px solid #42b983;
+    padding: 10px 15px;
+    color: #777;
+    background-color: rgba(66, 185, 131, .1);
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n),
+thead {
+    background-color: #fafafa;
+}
+
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr td {
+    border: 1px solid #dfe2e5;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+#write strong {
+    padding: 0 1px;
+}
+
+#write em {
+    padding: 0 5px 0 2px;
+}
+
+#write table thead th {
+    background-color: #f2f2f2;
+}
+
+#write .CodeMirror-gutters {
+    border-right: none;
+}
+
+#write .md-fences {
+    border: 1px solid #F4F4F4;
+    -webkit-font-smoothing: initial;
+    margin: 0.8rem 0 !important;
+    padding: 0.3rem 0 !important;
+    line-height: 1.43rem;
+    background-color: #F8F8F8 !important;
+    border-radius: 2px;
+    font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
+    font-size: 0.85rem;
+    word-wrap: normal;
+}
+
+#write .CodeMirror-wrap .CodeMirror-code pre {
+    padding-left: 12px;
+}
+
+#write code, tt {
+    margin: 0 2px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: Roboto Mono, Source Sans Pro, Monaco, courier, monospace !important;
+    font-size: 0.92rem;
+    color: #e96900;
+    background-color: #f8f8f8;
+}
+
+#write .md-footnote {
+    background-color: #f8f8f8;
+    color: #e96900;
+}
+
+/* heighlight. */
+#write mark {
+    background-color: #EBFFEB;
+    border-radius: 2px;
+    padding: 2px 4px;
+    margin: 0 2px;
+    color: #222;
+    font-weight: 500;
+}
+
+#write del {
+    padding: 1px 2px;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #22a2c9;
+}
+
+.cm-s-inner .cm-string {
+    color: #22a2c9;
+}
+
+.md-task-list-item > input {
+    margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+    background-color: #f8f8f8;
+}
+
+#write pre.md-meta-block {
+    padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block > .code-tooltip {
+    bottom: .375rem;
+}
+
+#write > h3.md-focus:before {
+    left: -1.5625rem;
+    top: .375rem;
+}
+
+#write > h4.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h5.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+#write > h6.md-focus:before {
+    left: -1.5625rem;
+    top: .285714286rem;
+}
+
+.md-image > .md-meta {
+    border-radius: 3px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 0 0 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: inherit;
+}
+
+.md-toc {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#md-notification:before {
+    top: 10px;
+}
+
+/** focus mode */
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state {
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><h1><a name="leadec-locations-operators-guide" class="md-header-anchor"></a><span>Leadec Locations Operator&#39;s Guide</span></h1><p><a href='https://www.dropbox.com/s/11pnehomqliypj9/Leadec-Locations_OperatorsGuide.pdf?dl=0'><strong><span>Download PDF</span></strong></a></p><hr /><div class='md-toc' mdtype='toc'><p class="md-toc-content"><span class="md-toc-item md-toc-h1" data-ref="n5937"><a class="md-toc-inner" style="" href="#leadec-locations-operators-guide">Leadec Locations Operator's Guide</a></span><span class="md-toc-item md-toc-h2" data-ref="n5942"><a class="md-toc-inner" style="" href="#overview">Overview</a></span><span class="md-toc-item md-toc-h2" data-ref="n5948"><a class="md-toc-inner" style="" href="#logging-into-the-dashboard">Logging into the Dashboard</a></span><span class="md-toc-item md-toc-h2" data-ref="n5963"><a class="md-toc-inner" style="" href="#managing-listings">Managing Listings</a></span><span class="md-toc-item md-toc-h3" data-ref="n5965"><a class="md-toc-inner" style="" href="#editing-an-existing-listing">Editing an existing listing</a></span><span class="md-toc-item md-toc-h4" data-ref="n5966"><a class="md-toc-inner" style="" href="#method-1-from-the-sidebar">Method 1: From the Sidebar</a></span><span class="md-toc-item md-toc-h4" data-ref="n5979"><a class="md-toc-inner" style="" href="#method-2-from-the-frontend">Method 2: From the Frontend</a></span><span class="md-toc-item md-toc-h4" data-ref="n5991"><a class="md-toc-inner" style="" href="#editing-the-details">Editing the Details</a></span><span class="md-toc-item md-toc-h3" data-ref="n6042"><a class="md-toc-inner" style="" href="#adding-a-new-listing">Adding a new listing</a></span><span class="md-toc-item md-toc-h4" data-ref="n6043"><a class="md-toc-inner" style="" href="#method-1---from-the-dashboard-sidebar">Method 1 - from the Dashboard sidebar</a></span><span class="md-toc-item md-toc-h4" data-ref="n6049"><a class="md-toc-inner" style="" href="#method-2---from-the-top-bar">Method 2 - from the Top Bar</a></span><span class="md-toc-item md-toc-h4" data-ref="n6058"><a class="md-toc-inner" style="" href="#adding-the-listing">Adding the Listing</a></span><span class="md-toc-item md-toc-h2" data-ref="n6109"><a class="md-toc-inner" style="" href="#managing-regions">Managing Regions </a></span><span class="md-toc-item md-toc-h2" data-ref="n6140"><a class="md-toc-inner" style="" href="#managing-service-lines">Managing Service Lines</a></span><span class="md-toc-item md-toc-h2" data-ref="n6168"><a class="md-toc-inner" style="" href="#managing-tags">Managing Tags</a></span><span class="md-toc-item md-toc-h2" data-ref="n6171"><a class="md-toc-inner" style="" href="#managing-media">Managing Media</a></span><span class="md-toc-item md-toc-h4" data-ref="n6173"><a class="md-toc-inner" style="" href="#adding-new-images">Adding new images</a></span><span class="md-toc-item md-toc-h4" data-ref="n6189"><a class="md-toc-inner" style="" href="#editdelete-image">Edit/Delete image</a></span><span class="md-toc-item md-toc-h5" data-ref="n6191"><a class="md-toc-inner" style="" href="#delete-single-image">Delete single image</a></span><span class="md-toc-item md-toc-h5" data-ref="n6201"><a class="md-toc-inner" style="" href="#bulk-delete">Bulk Delete</a></span><span class="md-toc-item md-toc-h5" data-ref="n6213"><a class="md-toc-inner" style="" href="#list-view">List View</a></span><span class="md-toc-item md-toc-h2" data-ref="n6225"><a class="md-toc-inner" style="" href="#managing-users">Managing Users</a></span><span class="md-toc-item md-toc-h4" data-ref="n6227"><a class="md-toc-inner" style="" href="#adding-a-new-user">Adding a new user</a></span><span class="md-toc-item md-toc-h2" data-ref="n6249"><a class="md-toc-inner" style="" href="#references">References</a></span><span class="md-toc-item md-toc-h5" data-ref="n6250"><a class="md-toc-inner" style="" href="#links">Links:</a></span><span class="md-toc-item md-toc-h5" data-ref="n6253"><a class="md-toc-inner" style="" href="#images">Images:</a></span><span class="md-toc-item md-toc-h5" data-ref="n6257"><a class="md-toc-inner" style="" href="#info">Info:</a></span></p></div><p>&nbsp;</p><h2><a name="overview" class="md-header-anchor"></a><span>Overview</span></h2><p><span>Welcome to the Leadec Locations Operator’s Guide! Here you can find everything you need to know to configure, create, and remove all listings, categories, regions, and tags. </span></p><p><span>This project is built on top of a </span><mark><span>READ ONLY</span></mark><span> API endpoint powered by </span><a href='https://jekyllrb.com/'><span>Jekyll</span></a><span> , built with </span><a href='https://github.com/ginfuru/Flightdeck'><span>Flightdeck</span></a><span>, and content managed by WordPress.  This stack takes full advantage of the </span><a href='https://jamstack.org/'><span>JAMStack</span></a><span> to facilitate the requirements of modern progressive web apps, speed and optimization, while keeping interfaces familiar. </span></p><p><span>From here forward you&#39;ll see a series of terms used to describe Leadec job-sites, though these terms may sound the same there is logical reason for the choice of words, to distinguish the differences between the data and presentation layers.</span></p><blockquote><p><strong><span>Please Note:</span></strong><span> WordPress is only used to be a Headless CMS </span></p></blockquote><h2><a name="logging-into-the-dashboard" class="md-header-anchor"></a><span>Logging into the Dashboard</span></h2><p><span>In your prefered browser, head over to: </span><strong><a href='https://leadec-locations.com/update'><span>https://leadec-locations.com/update</span></a></strong><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup></p><ul><li><p><span>You should now be at the login screen, </span></p><ol start='' ><li><span>enter your username </span><em><span>(or email address)</span></em></li><li><span>your password</span></li><li><span>Click </span><code>Log In</code></li></ol></li></ul><p><img src='https://rdmcrew.d.pr/cXChbV+' alt='login page' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h2><a name="managing-listings" class="md-header-anchor"></a><span>Managing Listings</span></h2><p><span>Adding new or editing existing listings is performed with a similar interface to the WordPress administration dashboard. This interface is used manage content from the API</span><sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup><span> -  this is read oly so items such as plugins for WordPress will do nothing.</span></p><h3><a name="editing-an-existing-listing" class="md-header-anchor"></a><span>Editing an existing listing</span></h3><h4><a name="method-1-from-the-sidebar" class="md-header-anchor"></a><span>Method 1: From the Sidebar</span></h4><ol start='' ><li><p><span>Click on </span><strong><span>Listings</span></strong><span> on the sidebar</span></p></li><li><p><span>Click on </span><strong><span>All Listings</span></strong></p></li><li><p><span>Scroll to the listing and click the name of the listing </span><mark><span>OR</span></mark><span> edit button </span><em><span>(under Actions)</span></em></p><ul><li><span>You can also use the Search input to find any specific listing.</span></li></ul></li></ol><p><img src='https://rdmcrew.d.pr/6bAapn+' alt='method 1' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h4><a name="method-2-from-the-frontend" class="md-header-anchor"></a><span>Method 2: From the Frontend</span></h4><ol start='' ><li><span>Make sure that you are logged in</span></li><li><span>Navigate to any Listing details page</span></li><li><span>Click on the </span><strong><span>Edit Listing</span></strong><span> in the blue top bar</span></li><li><span>Referrence the </span><a href='#'><span>Edit the Details</span></a><span> section on how to edit the details.</span></li></ol><p><img src='https://rdmcrew.d.pr/I8fT31+' alt='Front the frontend' referrerPolicy='no-referrer' /></p><hr /><h4><a name="editing-the-details" class="md-header-anchor"></a><span>Editing the Details</span></h4><p><span> Once you click on a listing, you are presented with </span><a href='https://forestry.io/blog/ubuild-a-new-theme-for-static-sites-using-blocks'><span>BLOCKs</span></a><span>. Each block is a piece of information that will populate to the map and the detail page for listing. The only field that is required is the </span><strong><span>Title</span></strong><span>, this field will also set the permalink </span><em><span>(URL)</span></em><span> for each listing, but can be over-written with a custom slug - </span><em><strong><span>See item 2</span></strong></em><span> </span></p><p><strong><span>Available BLOCKs:</span></strong></p><ol start='' ><li><p><strong><span>Title</span></strong><span> - this field is the name of the listing (job site location)</span><sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup></p><ul><li><span>this field affects -- listing detail, map location name, quick-look, search result, category list, and region list.</span></li></ul></li><li><p><strong><span>Permalink</span></strong><span> - this field is auto generated by the Title, but can be over-written.</span></p></li><li><p><strong><span>Description</span></strong><span> - this field is a text box that allow for any information. </span></p></li><li><p><strong><span>Full State</span></strong><span> - this field is static information - anything can be placed here.</span></p></li><li><p><strong><span>Region</span></strong><span> - this field is used to group listings by geographical regions, such as by City, County, State, Country, or Custom Region.</span></p><ul><li><span>to manage Region please reference - </span><a href='#managing-regions'><span>Managing Regions</span></a><span>.</span></li></ul></li><li><p><strong><span>Location Code</span></strong><span> - this field is static information and is used for Leadec location codes - anything can be place here. </span></p></li><li><p><strong><span>Service Lines</span></strong><span> - this field is used to group listing by the types of services </span><em><span>(categories)</span></em><span> Leadec provides for the job-site.</span></p><ul><li><span>to manage Service Lines please reference - </span><a href='#managing-service-lines'><span>Managing Service Lines</span></a></li></ul></li><li><p><strong><span>Location</span></strong><span> - Address is auto populated based on closing matching criteria from the Google Map&#39;s API.</span></p></li><li><p><strong><span>Address</span></strong><span> - this field is used to display the physical address in the </span><em><span>“Details”</span></em><span> section </span></p><ul><li><span>this is static information - anything can be placed here. </span></li></ul></li><li><p><strong><span>Square Footage</span></strong><span> - this field is used to display the job-site facility square footage </span></p></li><li><p><strong><span>Cover Image</span></strong><span> - this is used to upload or select a custom header image for the job-site listing</span></p><ul><li><span>to manage Images please reference - </span><a href='#managing-media'><span>Managing Media</span></a></li><li><span>If there is no cover image for a listing - a fall back image is presented of the Leadec buidling</span></li></ul></li><li><p><strong><span>Gallery Images</span></strong><span> - this is used to display a single image or series of images on the listing&#39;s detail page. </span></p><ul><li><span>to manage Images please reference - </span><a href='#managing-media'><span>Managing Media</span></a></li></ul></li></ol><p><img src='https://rdmcrew.d.pr/thg17h+' alt='Editing a Listing' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><hr /><h3><a name="adding-a-new-listing" class="md-header-anchor"></a><span>Adding a new listing</span></h3><h4><a name="method-1---from-the-dashboard-sidebar" class="md-header-anchor"></a><span>Method 1 - from the Dashboard sidebar</span></h4><ol start='' ><li><span>Click on </span><strong><span>Listings</span></strong><span> on the sidebar</span></li><li><span>Click on </span><strong><span>Add New</span></strong><span> - from the sidebar</span><sup class='md-footnote'><a href='#dfref-footnote-4' name='ref-footnote-4'>4</a></sup><span> </span><mark><span>OR</span></mark><span> if you&#39;re already on </span><strong><span>All Listings</span></strong><sup class='md-footnote'><a href='#dfref-footnote-5' name='ref-footnote-5'>5</a></sup></li></ol><h4><a name="method-2---from-the-top-bar" class="md-header-anchor"></a><span>Method 2 - from the Top Bar</span></h4><ol start='' ><li><span>Click on </span><strong><span>+ New</span></strong><span> on the top bar</span></li><li><span>Click on </span><strong><span>Listing</span></strong><sup class='md-footnote'><a href='#dfref-footnote-6' name='ref-footnote-6'>6</a></sup><span> at the top of the screen</span></li></ol><p><img src='https://rdmcrew.d.pr/uDioLP+' alt='Add New Listings' referrerPolicy='no-referrer' /></p><p><span>Once you click any of the </span><strong><span>Add New</span></strong><span> button/links, you will be brought the the Listing Editor view. From this view the only field that is </span><strong><span>Required</span></strong><span> is the </span><strong><span>Title</span></strong><span>. All the same fields listed above are the same. </span></p><hr /><h4><a name="adding-the-listing" class="md-header-anchor"></a><span>Adding the Listing</span></h4><p><span>Once you click on Add New, you are presented an empty listing details page. From here there you&#39;ll need to:</span></p><ol start='' ><li><strong><span>Add a Title</span></strong><span> - this field is the name of the listing (job site location)</span><sup class='md-footnote'><a href='#dfref-footnote-3-1' name='ref-footnote-3-1'>3</a></sup></li><li><strong><span>Select Listing </span></strong><span> - this field associates your listing with the data endpoint for the Maps API. </span></li></ol><blockquote><p><span>Once both </span><strong><span>1 &amp; 2 are complete</span></strong><span> additional BLOCKs will be displayed for editing.</span></p></blockquote><p><strong><span>Available BLOCKs:</span></strong></p><ol start='' ><li><p><strong><span>Permalink</span></strong><span> - this field is auto generated by the Title, but can be over-written.</span></p></li><li><p><strong><span>Description</span></strong><span> - this field is a text box that allow for any information. </span></p></li><li><p><strong><span>Full State</span></strong><span> - this field is static information - anything can be placed here.</span></p></li><li><p><strong><span>Region</span></strong><span> - this field is used to group listings by geographical regions, such as by City, County, State, Country, or Custom Region.</span></p><ul><li><span>to manage Region please reference - </span><a href='#managing-regions'><span>Managing Regions</span></a><span>.</span></li></ul></li><li><p><strong><span>Location Code</span></strong><span> - this field is static information and is used for Leadec location codes - anything can be place here. </span></p></li><li><p><strong><span>Service Lines</span></strong><span> - this field is used to group listing by the types of services </span><em><span>(categories)</span></em><span> Leadec provides for the job-site.</span></p><ul><li><span>to manage Service Lines please reference - </span><a href='#managing-service-lines'><span>Managing Service Lines</span></a></li></ul></li><li><p><strong><span>Location</span></strong><span> - Address is auto populated based on closing matching criteria from the Google Map&#39;s API.</span></p></li><li><p><strong><span>Address</span></strong><span> - this field is used to display the physical address in the </span><em><span>“Details”</span></em><span> section </span></p><ul><li><span>this is static information - anything can be placed here. </span></li></ul></li><li><p><strong><span>Square Footage</span></strong><span> - this field is used to display the job-site facility square footage </span></p></li><li><p><strong><span>Cover Image</span></strong><span> - this is used to upload or select a custom header image for the job-site listing </span></p><ul><li><span>If </span><strong><span>no cover image is added</span></strong><span> - a fall back image is presented</span></li><li><span>to manage Images please reference - </span><a href='#managing-media'><span>Managing Media</span></a></li></ul></li><li><p><strong><span>Gallery Images</span></strong><span> - this is used to display a single image or series of images on the listing&#39;s detail page. </span></p><ul><li><span>to manage Images please reference - </span><a href='#managing-media'><span>Managing Media</span></a></li></ul></li></ol><p><img src='https://rdmcrew.d.pr/TPHqkq+' alt='add new' referrerPolicy='no-referrer' /></p><h2><a name="managing-regions" class="md-header-anchor"></a><span>Managing Regions </span></h2><p><span>Regions are categories essentianally, but grouped by geographic locations, like Country and/or State. When editing or createing a new region, there are several options that presented:</span></p><ul><li><p><strong><span>Name</span></strong><span> - this field is the name of the geographic location </span><em><span>(ie: Ohio)</span></em><sup class='md-footnote'><a href='#dfref-footnote-3-2' name='ref-footnote-3-2'>3</a></sup></p></li><li><p><strong><span>Slug</span></strong><span> - this field is auto generated from the Name, but can be over-written.</span></p></li><li><p><strong><span>Parent Region</span></strong><span> - this field allows you to select a Region to be nested under </span><em><span>(ie: USA)</span></em></p></li><li><p><strong><span>Description</span></strong><span> - this field is used to describe the reigon</span></p></li><li><p><strong><span>Icon Option</span></strong><span> - select either icon font or custom image</span></p><ul><li><span>Default icon →  </span><img src=' https://rdmcrew.d.pr/Ogv3PX+' alt='location-pin-4' referrerPolicy='no-referrer' /></li><li><span>Icon Font - is a series of icons available </span></li><li><span>Upload image - allows you to select an existing image from the Media Library or to upload a new image. </span></li></ul></li><li><p><strong><span>Color</span></strong><span> - this allows you to set a customer color for the region icons</span></p><ul><li><span>this is visible only during search/filtering of listings</span></li></ul></li><li><p><strong><span>Text Color</span></strong><span> - this allows you to select a contrasting color for the icon or text for each region icon  </span></p><ul><li><span>this is visible only during search/filtering of listings</span></li></ul><p><img src='https://rdmcrew.d.pr/scQlZE+' alt='Add Remove Region' referrerPolicy='no-referrer' /></p></li></ul><h2><a name="managing-service-lines" class="md-header-anchor"></a><span>Managing Service Lines</span></h2><p><span>Service Lines are categories, that let you sort listings by the services provided by Leadec. Similar to </span><a href='#managing-regions'><span>Regions</span></a><span>, Servce Lines can have many listings assigned with them. When editing or adding a service line, there are several options that presented:</span></p><ul><li><p><strong><span>Name</span></strong><span> - this field is the name of the service line </span><em><span>(ie: Electrical Installation)</span></em><sup class='md-footnote'><a href='#dfref-footnote-3-3' name='ref-footnote-3-3'>3</a></sup></p></li><li><p><strong><span>Slug</span></strong><span> - this field is auto generated from the Name, but can be over-written.</span></p></li><li><p><strong><span>Parent Category</span></strong><span> - this field allows you to select a Region to be nested under </span><em><span>(ie: USA)</span></em></p></li><li><p><strong><span>Description</span></strong><span> - this field is used to describe the reigon</span></p></li><li><p><strong><span>Icon Option</span></strong><span> - select either icon font or custom image</span></p><ul><li><span>Icon Font - is a series of icons available </span></li><li><span>Upload image - allows you to select an existing image from the Media Library or to upload a new image. </span></li></ul></li><li><p><strong><span>Color</span></strong><span> - this allows you to set a customer color for the region icons</span></p><ul><li><span>this is visible only during search/filtering of listings</span></li></ul></li><li><p><strong><span>Text Color</span></strong><span> - this allows you to select a contrasting color for the icon or text for each region icon  </span></p><ul><li><span>this is visible only during search/filtering of listings</span></li></ul></li></ul><h2><a name="managing-tags" class="md-header-anchor"></a><span>Managing Tags</span></h2><p><span>Tags are additional taxonomy for search and grouping criteria. Managing of tags is conducted the same as Regions and Service Lines. </span></p><p><code>currently not in use</code><span> - tags can be added at any point.</span></p><h2><a name="managing-media" class="md-header-anchor"></a><span>Managing Media</span></h2><p><span>The default WordPress media library is used to manage all images. This gives the user the ability to add, edit, and delete any image file that is uploaded to the library. </span><strong><span>Please note:</span></strong><span> This is a headless CMS so plugins are not available.</span></p><h4><a name="adding-new-images" class="md-header-anchor"></a><span>Adding new images</span></h4><ol start='' ><li><p><span>Click on </span><strong><span>Media</span></strong><span> on the sidebar </span><mark><span>OR</span></mark><span> from </span><strong><span>New</span></strong><span> in the top bar</span></p></li><li><p><span>Drag an image the the dropzone </span><mark><span>OR</span></mark><span> use the </span><strong><span>Select Files</span></strong><span> button</span></p><ul><li><p><span>256MB is the maxium file size </span></p></li><li><p><span>Any image format will do </span><code>PNG/JPG/JPEG/BMP/GIF/PDF</code></p><ul><li><em><span>(video and audio files can be uploaded but please email </span><a href='mailto:support@rainyday.media'><span>support@rainyday.media</span></a><span> prior to uploading to enable CDN support)</span></em><span> </span></li></ul></li></ul></li></ol><p><img src='https://rdmcrew.d.pr/eMe9Y9+' alt='adding media' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h4><a name="editdelete-image" class="md-header-anchor"></a><span>Edit/Delete image</span></h4><p><span>Editing images is limited on what is actually displayed on the frontend of the website but all field are available to edit. Deleting an single image or bulk deleting images is possible. </span></p><h5><a name="delete-single-image" class="md-header-anchor"></a><span>Delete single image</span></h5><ol start='' ><li><p><span>Click on the image to deleted</span></p></li><li><p><span>Inside of the modal, click on </span><code>Delete Permanently</code></p></li><li><p><span>Confirm with </span><strong><span>OK</span></strong></p><p><img src='https://rdmcrew.d.pr/p2WtxD+' alt='delete 1 image' referrerPolicy='no-referrer' /></p></li></ol><p>&nbsp;</p><h5><a name="bulk-delete" class="md-header-anchor"></a><span>Bulk Delete</span></h5><ol start='' ><li><span>Click the </span><strong><span>Bulk Select</span></strong><span> button</span></li><li><span>Select images</span></li><li><span>Click the </span><strong><span>Delete Permanently</span></strong><span> button</span></li><li><span>Confirm with </span><strong><span>OK</span></strong></li></ol><p><img src='https://rdmcrew.d.pr/8OhHoO+' alt='bulk delete' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h5><a name="list-view" class="md-header-anchor"></a><span>List View</span></h5><p><span>Switch to list view by clicking on the </span><img src='https://rdmcrew.d.pr/DytYd8+' alt='list icon' referrerPolicy='no-referrer' /></p><ol start='' ><li><span>Hover over the image and select </span><strong><span>Delete Permanently</span></strong></li><li><span>Check the boxes for each image </span></li><li><span>Select </span><strong><span>Delete Permanently</span></strong></li><li><span>Click the </span><strong><span>Apply</span></strong><span> button</span></li></ol><p><img src='https://rdmcrew.d.pr/nTYpPE+' alt='delete' referrerPolicy='no-referrer' /></p><h2><a name="managing-users" class="md-header-anchor"></a><span>Managing Users</span></h2><p><span>Managing users is very similar to managing Listings. </span></p><h4><a name="adding-a-new-user" class="md-header-anchor"></a><span>Adding a new user</span></h4><ol start='' ><li><p><span>Click on </span><strong><span>Users</span></strong></p></li><li><p><span>Click on </span><strong><span>Add New</span></strong></p></li><li><p><span>Fill out at least </span><sup class='md-footnote'><a href='#dfref-footnote-3-4' name='ref-footnote-3-4'>3</a></sup></p><ul><li><span>Username</span></li><li><span>Email</span></li></ul></li><li><p><span>Select User Role</span></p><ul><li><strong><span>Editor</span></strong><span> - </span><em><span>Default role</span></em><span> -- this role has the ability to manage all aspects of the site</span></li><li><strong><span>Web Admin</span></strong><span> - this role has the abilities of an Editor plus Adding/Deleting/Editing users</span></li></ul></li></ol><p><img src='https://rdmcrew.d.pr/3UK7ux+' alt='managing users' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h2><a name="references" class="md-header-anchor"></a><span>References</span></h2><h5><a name="links" class="md-header-anchor"></a><span>Links:</span></h5><h5><a name="images" class="md-header-anchor"></a><span>Images:</span></h5><h5><a name="info" class="md-header-anchor"></a><span>Info:</span></h5><p>&nbsp;</p><div class='footnotes-area'  ><hr/>
+<div class='footnote-line'><span class='md-fn-count'>1</span> <span>You should bookmark this URL.</span><a name='dfref-footnote-1' href='#ref-footnote-1' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>2</span> <span>Application Programming Interface</span><a name='dfref-footnote-2' href='#ref-footnote-2' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>3</span> <span>This field is required</span><a name='dfref-footnote-3' href='#ref-footnote-3' title='back to document' class='reversefootnote' >↩</a><a name='dfref-footnote-3-1' href='#ref-footnote-3-1' title='back to document' class='reversefootnote' >↩</a><a name='dfref-footnote-3-2' href='#ref-footnote-3-2' title='back to document' class='reversefootnote' >↩</a><a name='dfref-footnote-3-3' href='#ref-footnote-3-3' title='back to document' class='reversefootnote' >↩</a><a name='dfref-footnote-3-4' href='#ref-footnote-3-4' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>4</span> <span>`Listings / Add new</span><a name='dfref-footnote-4' href='#ref-footnote-4' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>5</span> <span>Add New Button </span><a name='dfref-footnote-5' href='#ref-footnote-5' title='back to document' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>6</span> <span>Add Listing</span><a name='dfref-footnote-6' href='#ref-footnote-6' title='back to document' class='reversefootnote' >↩</a></div></div></div>
+</body>
+</html>
